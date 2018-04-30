@@ -5,7 +5,7 @@ Thanks to:
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Stories in Ready](https://badge.waffle.io/zhukov/webogram.png?label=ready&title=Ready)](https://waffle.io/zhukov/webogram)
 
-## [Webogram](https://web.telegram.org) — Telegram Web App
+## [ONAIR.IM](https://onair.im) — is uncensored Telegram Web App, — [Webogram](https://github.com/zhukov/webogram). 
 
 Telegram offers great [apps for mobile communication](https://www.telegram.org). It is based on the [MTProto protocol](https://core.telegram.org/mtproto) and has an [Open API](https://core.telegram.org/api). I personally like Telegram for its speed and cloud-support (that makes a web app possible, unlike in the case of WA and others).
 
