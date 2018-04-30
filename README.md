@@ -91,6 +91,66 @@ Run `gulp watch` to watch for file changes and automatically rebuild the app.
 
 Run `gulp clean`, then `gulp publish` to build the minimized production version of the app. Copy `dist` folder contents to your web server. Don't forget to set `X-Frame-Options SAMEORIGIN` header ([docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options)).
 
+### NGINX settings
+Edit your Nginx config file to include the following locations:
+
+```
+location ^~ /pluto/apiw1/ {
+            proxy_pass https://pluto.web.telegram.org/apiw1/;
+}
+location ^~ /venus/apiw1/  {
+            proxy_pass https://venus.web.telegram.org/apiw1/;
+}
+location ^~ /aurora/apiw1/ {
+            proxy_pass https://aurora.web.telegram.org/apiw1/;
+}
+location ^~ /vesta/apiw1/ {
+            proxy_pass https://vesta.web.telegram.org/apiw1/;
+}
+location ^~ /flora/apiw1/ {
+            proxy_pass https://flora.web.telegram.org/apiw1/;
+}
+location ^~ /pluto-1/apiw1/ {
+            proxy_pass https://pluto-1.web.telegram.org/apiw1/;
+}
+location ^~ /venus-1/apiw1/  {
+            proxy_pass https://venus-1.web.telegram.org/apiw1/;
+}
+location ^~ /aurora-1/apiw1/ {
+            proxy_pass https://aurora-1.web.telegram.org/apiw1/;
+}
+location ^~ /vesta-1/apiw1/ {
+            proxy_pass https://vesta-1.web.telegram.org/apiw1/;
+}
+location ^~ /flora-1/apiw1/ {
+            proxy_pass https://flora-1.web.telegram.org/apiw1/;
+}
+location ^~ /DC1/ {
+            proxy_pass http://149.154.175.10:80/;
+}
+location ^~ /DC2/ {
+            proxy_pass http://149.154.167.40:80/;
+}
+location ^~ /DC3/ {
+            proxy_pass http://149.154.175.117:80/;
+}
+location ^~ /DC4/ {
+            proxy_pass http://149.154.175.50:80/;
+}
+location ^~ /DC5/ {
+            proxy_pass http://149.154.167.51:80/;
+}
+location ^~ /DC6/ {
+            proxy_pass http://149.154.175.100:80/;
+}
+location ^~ /DC7/ {
+            proxy_pass http://149.154.167.91:80/;
+}
+location ^~ /DC8/ {
+            proxy_pass http://149.154.171.5:80/;
+}
+```
+
 
 ### Third party libraries
 
