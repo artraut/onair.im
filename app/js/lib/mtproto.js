@@ -21,7 +21,8 @@ angular.module('izhukov.mtproto', ['izhukov.utils'])
         {id: 2, host: 'onair.im/DC5', port: 80},
         {id: 3, host: 'onair.im/DC6', port: 80},
         {id: 4, host: 'onair.im/DC7', port: 80},
-        {id: 5, host: 'onair.im/DC8', port: 80}
+        {id: 5, host: 'onair.im/DC8', port: 80},
+        {id: 6, host: 'onair.im/DC9', port: 443}
       ]
 
     var chosenServers = {}
