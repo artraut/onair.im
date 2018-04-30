@@ -12,16 +12,16 @@ angular.module('izhukov.mtproto', ['izhukov.utils'])
 
     var dcOptions = Config.Modes.test
       ? [
-        {id: 1, host: '149.154.175.10',  port: 80},
-        {id: 2, host: '149.154.167.40',  port: 80},
-        {id: 3, host: '149.154.175.117', port: 80}
+        {id: 1, host: 'onair.im/DC1', port: 80},
+        {id: 2, host: 'onair.im/DC2', port: 80},
+        {id: 3, host: 'onair.im/DC3', port: 80}
       ]
       : [
-        {id: 1, host: '149.154.175.50',  port: 80},
-        {id: 2, host: '149.154.167.51',  port: 80},
-        {id: 3, host: '149.154.175.100', port: 80},
-        {id: 4, host: '149.154.167.91',  port: 80},
-        {id: 5, host: '149.154.171.5',   port: 80}
+        {id: 1, host: 'onair.im/DC4', port: 80},
+        {id: 2, host: 'onair.im/DC5', port: 80},
+        {id: 3, host: 'onair.im/DC6', port: 80},
+        {id: 4, host: 'onair.im/DC7', port: 80},
+        {id: 5, host: 'onair.im/DC8', port: 80}
       ]
 
     var chosenServers = {}
@@ -33,15 +33,15 @@ angular.module('izhukov.mtproto', ['izhukov.utils'])
 
         if (Config.Modes.ssl || !Config.Modes.http) {
           var subdomain = sslSubdomains[dcID - 1] + (upload ? '-1' : '')
-          var path = Config.Modes.test ? 'apiw_test1' : 'apiw1'
-          chosenServer = 'https://' + subdomain + '.web.telegram.org/' + path
+          var path = Config.Modes.test ? 'apiw_test1' : 'apiw1/'
+          chosenServer = 'https://onair.im/' + subdomain + path
           return chosenServer
         }
 
         for (i = 0; i < dcOptions.length; i++) {
           dcOption = dcOptions[i]
           if (dcOption.id == dcID) {
-            chosenServer = 'http://' + dcOption.host + (dcOption.port != 80 ? ':' + dcOption.port : '') + '/apiw1'
+            chosenServer = 'https://' + dcOption.host + '/apiw1'
             break
           }
         }
