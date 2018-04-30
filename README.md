@@ -1,6 +1,6 @@
 Thanks to:
-https://github.com/zhukov
-https://github.com/tecknojock
+* https://github.com/zhukov
+* https://github.com/tecknojock
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Stories in Ready](https://badge.waffle.io/zhukov/webogram.png?label=ready&title=Ready)](https://waffle.io/zhukov/webogram)
