@@ -10,19 +10,21 @@ angular.module('izhukov.mtproto', ['izhukov.utils'])
   .factory('MtpDcConfigurator', function () {
     var sslSubdomains = ['pluto', 'venus', 'aurora', 'vesta', 'flora']
 
+    var currentHost = location.hostname
+
     var dcOptions = Config.Modes.test
       ? [
-        {id: 1, host: 'onair.im/DC1', port: 80},
-        {id: 2, host: 'onair.im/DC2', port: 80},
-        {id: 3, host: 'onair.im/DC3', port: 80}
+        {id: 1, host: currentHost + '/DC1', port: 80},
+        {id: 2, host: currentHost + '/DC2', port: 80},
+        {id: 3, host: currentHost + '/DC3', port: 80}
       ]
       : [
-        {id: 1, host: 'onair.im/DC4', port: 80},
-        {id: 2, host: 'onair.im/DC5', port: 80},
-        {id: 3, host: 'onair.im/DC6', port: 80},
-        {id: 4, host: 'onair.im/DC7', port: 80},
-        {id: 5, host: 'onair.im/DC8', port: 80},
-        {id: 6, host: 'onair.im/DC9', port: 443}
+        {id: 1, host: currentHost + '/DC4', port: 80},
+        {id: 2, host: currentHost + '/DC5', port: 80},
+        {id: 3, host: currentHost + '/DC6', port: 80},
+        {id: 4, host: currentHost + '/DC7', port: 80},
+        {id: 5, host: currentHost + '/DC8', port: 80},
+        {id: 6, host: currentHost + '/DC9', port: 443}
       ]
 
     var chosenServers = {}
@@ -35,7 +37,7 @@ angular.module('izhukov.mtproto', ['izhukov.utils'])
         if (Config.Modes.ssl || !Config.Modes.http) {
           var subdomain = sslSubdomains[dcID - 1] + (upload ? '-1' : '')
           var path = Config.Modes.test ? 'apiw_test1' : '/apiw1'
-          chosenServer = 'https://onair.im/' + subdomain + path
+          chosenServer = 'https://' + currentHost +  '/' + subdomain + path
           return chosenServer
         }
 
