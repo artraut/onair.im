@@ -3,15 +3,9 @@ console.log('[SW] Push worker started')
 var pendingNotification = false
 
 var defaultBaseUrl
-switch (location.hostname) {
-  case 'localhost':
+if (location.hostname === 'localhost') {
     defaultBaseUrl = 'http://localhost:8000/app/index.html#/im'
-    break
-  case 'zhukov.github.io':
-    defaultBaseUrl = 'https://zhukov.github.io/webogram/#/im'
-    break
-  default:
-  case 'web.telegram.org':
+} else {
     defaultBaseUrl = 'https://' + location.hostname + '/#/im'
 }
 

@@ -21,7 +21,7 @@ Config.App = {
   id: 219898,
   hash: '7ac59b7f4cbbfa1b40b2cebd59801a63',
   version: '1.0.0',
-  domains: ['onair.im']
+  domains: [location.hostname]
 }
 
 Config.Modes = {
